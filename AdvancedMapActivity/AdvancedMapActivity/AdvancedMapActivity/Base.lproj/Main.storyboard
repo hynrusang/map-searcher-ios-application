@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HV4-qm-pb9">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--장소 검색-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SelectionViewController" customModule="AdvancedMapActivity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="El6-lG-RDy">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" horizontalHuggingPriority="300" verticalHuggingPriority="300" horizontalCompressionResistancePriority="800" verticalCompressionResistancePriority="800" translatesAutoresizingMaskIntoConstraints="NO" id="uxD-Rx-Zbh">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="NX4-ZP-Hn6"/>
+                                        </connections>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="icr-6E-Rzt">
+                                        <rect key="frame" x="0.0" y="66" width="393" height="644"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="icr-6E-Rzt" firstAttribute="leading" secondItem="El6-lG-RDy" secondAttribute="leading" id="F9w-RP-f05"/>
+                                    <constraint firstAttribute="trailing" secondItem="uxD-Rx-Zbh" secondAttribute="trailing" id="RiR-tn-qvg"/>
+                                    <constraint firstAttribute="trailing" secondItem="icr-6E-Rzt" secondAttribute="trailing" id="YPM-gG-KW6"/>
+                                    <constraint firstItem="uxD-Rx-Zbh" firstAttribute="leading" secondItem="El6-lG-RDy" secondAttribute="leading" id="fP0-Y6-TRx"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="El6-lG-RDy" secondAttribute="bottom" id="Cp9-uf-tbP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="El6-lG-RDy" secondAttribute="trailing" id="NHO-rc-1g3"/>
+                            <constraint firstItem="El6-lG-RDy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RRW-lW-ySN"/>
+                            <constraint firstItem="El6-lG-RDy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="km0-aj-b7m"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="장소 검색" image="map" catalog="system" id="HKK-yx-Ueu"/>
+                    <connections>
+                        <outlet property="autoCompleteView" destination="icr-6E-Rzt" id="bvm-Pq-5QS"/>
+                        <outlet property="searchBar" destination="uxD-Rx-Zbh" id="nPg-rW-j2Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="529" y="-49"/>
+        </scene>
+        <!--장소 요약-->
+        <scene sceneID="N8P-1x-3CA">
+            <objects>
+                <viewController id="865-bY-2SJ" customClass="DetailsViewController" customModule="AdvancedMapActivity" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AM3-S0-6bW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Y8d-RG-tyV">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hl6-eH-BgR">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRC-aL-A3g">
+                                        <rect key="frame" x="0.0" y="360" width="393" height="350"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fRC-aL-A3g" firstAttribute="leading" secondItem="Y8d-RG-tyV" secondAttribute="leading" id="3De-VV-dVA"/>
+                                    <constraint firstItem="Hl6-eH-BgR" firstAttribute="leading" secondItem="Y8d-RG-tyV" secondAttribute="leading" id="Cvf-hO-obg"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hl6-eH-BgR" secondAttribute="trailing" id="LYn-Zn-6jQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="fRC-aL-A3g" secondAttribute="trailing" id="b27-35-Cax"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="p4L-w5-jsX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="p4L-w5-jsX" firstAttribute="trailing" secondItem="Y8d-RG-tyV" secondAttribute="trailing" id="PM2-gA-u1u"/>
+                            <constraint firstItem="p4L-w5-jsX" firstAttribute="bottom" secondItem="Y8d-RG-tyV" secondAttribute="bottom" id="Xq1-eK-4L6"/>
+                            <constraint firstItem="Y8d-RG-tyV" firstAttribute="leading" secondItem="p4L-w5-jsX" secondAttribute="leading" id="gbM-pN-n9s"/>
+                            <constraint firstItem="Y8d-RG-tyV" firstAttribute="top" secondItem="p4L-w5-jsX" secondAttribute="top" id="khH-zI-4CR"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="장소 요약" image="magnifyingglass" catalog="system" id="owX-Do-erU"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="fRC-aL-A3g" id="LdS-9a-bS5"/>
+                        <outlet property="mapListView" destination="Hl6-eH-BgR" id="PFN-8I-SQY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OzF-8q-8IF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="527" y="687"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="b4g-qd-auL">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="HV4-qm-pb9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dGa-Fo-b6d">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="gDh-nn-Pes"/>
+                        <segue destination="865-bY-2SJ" kind="relationship" relationship="viewControllers" id="yYF-Lv-N29"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4UK-kK-tCg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-347.32824427480915" y="-49.295774647887328"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
